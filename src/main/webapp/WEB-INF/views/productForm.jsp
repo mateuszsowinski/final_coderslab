@@ -12,8 +12,8 @@
                 <div class="col-md-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Request Product</li>
+                            <li class="breadcrumb-item"><a href="">Strona główna</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Dodaj produkt</li>
                         </ol>
                     </nav>
                 </div>
@@ -24,7 +24,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
-                    <div class="default-title"><h2>Request Product?</h2><img src="images/line.svg" alt=""></div>
+                    <div class="default-title"><h2>Dodaj Produkt</h2><img src="images/line.svg" alt=""></div>
                 </div>
                 <div class="col-lg-6">
                     <div class="request-products">
@@ -32,14 +32,17 @@
                             <div class="form-group">
                               <p hidden>  <form:input path="id" type="text" value="" /></div></p>
                             <form:input path="name" type="text" value="" placeholder="Nazwa produktu"/>
+                            <form:errors path="name"/>
                             <form:input path="price" type="text" value="" placeholder="Cena produktu" />
+                            <form:errors path="price"/>
                             <form:input path="description" type="text" value="" placeholder="Opis Produktu"/>
-                            <form:select  path="category">
-                                <form:option value="NONE"> --Wybierz--</form:option>
-                                <form:options items="${listOfInstitutionsNames}"></form:options>
+                            <form:errors path="description"/>
+                            <form:select  itemValue="id" itemLabel="name" path="category.id" items="${categoryModel}">
+                                <form:errors path="category" cssClass="error"/>
+
                             </form:select>
 
-                            <button class="next-btn16 hover-btn mt-3 rqst-btn" type="submit">Request Product</button>
+                            <button class="next-btn16 hover-btn mt-3 rqst-btn" type="submit">Dodaj produkt</button>
 
                         </form:form>
                         </div>
@@ -52,7 +55,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="default-title"><h2></h2>
-                        <p>How Do I order for Request on Gambo</p><img src="images/line.svg" alt=""></div>
+                        <p></p><img src="images/line.svg" alt=""></div>
                 </div>
 
                 </div>

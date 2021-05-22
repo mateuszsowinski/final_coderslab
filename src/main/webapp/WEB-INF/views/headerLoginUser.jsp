@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, shrink-to-fit=9">
     <meta name="description" content="Gambolthemes">
     <meta name="author" content="Gambolthemes">
-    <title>Gambo - Index</title><!-- Favicon Icon -->
+    <title>Targi Online</title><!-- Favicon Icon -->
     <link rel="icon" type="image/png" href="images/fav.png"><!-- Stylesheets -->
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
           rel="stylesheet">
@@ -139,6 +139,7 @@
             <%--            <div class="cart-total-dil"><h4>Targi on-line</h4><span>$34</span></div>--%>
             <%--            <div class="cart-total-dil pt-2"><h4>Delivery Charges</h4><span>$1</span></div>--%>
         </div>
+
         <div class="side-cart-items">
             <div class="cart-item">
                 <div class="cart-product-img"><img src="images/product/img-1.jpg" alt="">
@@ -162,6 +163,7 @@
             </div>
         </div>
     </div>
+
     <div class="bs-canvas-footer">
         <div class="cart-total-dil saving-total "><h4>Kwota końcowa</h4><span>$11</span></div>
         <div class="main-total-cart"><h2>Wartość:</h2><span>$35</span></div>
@@ -172,61 +174,47 @@
 <header class="header clearfix">
     <div class="top-header-group">
         <div class="top-header">
-            <div class="res_main_logo"><a href="index.html"><img src="images/dark-logo-1.svg" alt=""></a></div>
-            <div class="main_logo" id="logo"><a href="index.html"><img src="images/logo.svg" alt=""></a><a
-                    href="index.html"><img class="logo-inverse" src="images/dark-logo.svg" alt=""></a></div>
+            <div class="res_main_logo"><a href="/"><img src="images/dark-logo-1.svg" alt=""></a></div>
+            <div class="main_logo" id="logo"><a href="/"><img src="images/logo.svg" alt=""></a><a
+                    href="/"><img class="logo-inverse" src="images/dark-logo.svg" alt=""></a></div>
             <div class="select_location">
-                <div class="ui inline dropdown loc-title">
-                    <div class="text"><i class="uil uil-location-point"></i>Gurugram</div>
-                    <i class="uil uil-angle-down icon__14"></i>
-                    <div class="menu dropdown_loc">
-                        <div class="item channel_item"><i class="uil uil-location-point"></i>Gurugram</div>
-                        <div class="item channel_item"><i class="uil uil-location-point"></i>New Delhi</div>
-                        <div class="item channel_item"><i class="uil uil-location-point"></i>Bangaluru</div>
-                        <div class="item channel_item"><i class="uil uil-location-point"></i>Mumbai</div>
-                        <div class="item channel_item"><i class="uil uil-location-point"></i>Hyderabad</div>
-                        <div class="item channel_item"><i class="uil uil-location-point"></i>Kolkata</div>
-                        <div class="item channel_item"><i class="uil uil-location-point"></i>Ludhiana</div>
-                        <div class="item channel_item"><i class="uil uil-location-point"></i>Chandigrah</div>
-                    </div>
-                </div>
+
             </div>
             <div class="search120">
                 <div class="ui search">
                     <div class="ui left icon input swdh10"><input class="prompt srch10" type="text"
-                                                                  placeholder="Search for products.."><i
+                                                                  placeholder="Wyszukaj..."><i
                             class='uil uil-search-alt icon icon1'></i></div>
                 </div>
             </div>
             <div class="header_right">
                 <ul>
-                    <li><a href="#" class="offer-link"><i class="uil uil-phone-alt"></i>1800-000-000</a></li>
-                    <li><a href="offers.html" class="offer-link"><i class="uil uil-gift"></i>Offers</a></li>
-                    <li><a href="faq.html" class="offer-link"><i class="uil uil-question-circle"></i>Help</a></li>
-                    <li><a href="dashboard_my_wishlist.html" class="option_links" title="Wishlist"><i
-                            class='uil uil-heart icon_wishlist'></i><span class="noti_count1">3</span></a></li>
+<%--                    <li><a href="#" class="offer-link"><i class="uil uil-phone-alt"></i>1800-000-000</a></li>--%>
+<%--                    <li><a href="offers.html" class="offer-link"><i class="uil uil-gift"></i>Offers</a></li>--%>
+<%--                    <li><a href="faq.html" class="offer-link"><i class="uil uil-question-circle"></i>Help</a></li>--%>
+<%--                    <li><a href="dashboard_my_wishlist.html" class="option_links" title="Wishlist"><i--%>
+<%--                            class='uil uil-heart icon_wishlist'></i><span class="noti_count1">3</span></a></li>--%>
                     <li class="ui dropdown"><a href="#" class="opts_account"><img src="images/avatar/img-5.jpg"
                                                                                   alt=""><span class="user__name">John Doe</span><i
                             class="uil uil-angle-down"></i></a>
                         <div class="menu dropdown_account">
                             <div class="night_mode_switch__btn"><a href="#" id="night-mode" class="btn-night-mode"><i
-                                    class="uil uil-moon"></i>Night mode <span class="btn-night-mode-switch"><span
+                                    class="uil uil-moon"></i>Tryb ciemny<span class="btn-night-mode-switch"><span
                                     class="uk-switch-button"></span></span></a></div>
                             <a href="dashboard_overview.html" class="item channel_item"><i
                                     class="uil uil-apps icon__1"></i>Dashbaord</a><a href="dashboard_my_orders.html"
                                                                                      class="item channel_item"><i
-                                class="uil uil-box icon__1"></i>My Orders</a><a href="dashboard_my_wishlist.html"
+                                class="uil uil-box icon__1"></i>Zamówienia</a><a href="dashboard_my_wishlist.html"
                                                                                 class="item channel_item"><i
-                                class="uil uil-heart icon__1"></i>My Wishlist</a><a href="dashboard_my_wallet.html"
-                                                                                    class="item channel_item"><i
-                                class="uil uil-usd-circle icon__1"></i>My Wallet</a><a
+<%--                                class="uil uil-heart icon__1"></i>My Wishlist</a><a href="dashboard_my_wallet.html"--%>
+<%--                                                                                    class="item channel_item"><i--%>
+                                class="uil uil-usd-circle icon__1"></i>Punkty</a><a
                                 href="dashboard_my_addresses.html" class="item channel_item"><i
-                                class="uil uil-location-point icon__1"></i>My Address</a><a href="offers.html"
-                                                                                            class="item channel_item"><i
-                                class="uil uil-gift icon__1"></i>Offers</a><a href="faq.html" class="item channel_item"><i
-                                class="uil uil-info-circle icon__1"></i>Faq</a><a href="sign_in.html"
-                                                                                  class="item channel_item"><i
-                                class="uil uil-lock-alt icon__1"></i>Logout</a></div>
+<%--                                class="uil uil-location-point icon__1"></i>My Address</a><a href="offers.html"--%>
+<%--                                                                                            class="item channel_item"><i--%>
+<%--                                class="uil uil-gift icon__1"></i>Offers</a><a href="faq.html" class="item channel_item"><i--%>
+<%--                                class="uil uil-info-circle icon__1"></i>Faq</a>--%>
+                            <a href="/logout" class="item channel_item"><i class="uil uil-lock-alt icon__1"></i>Wyloguj</a></div>
                     </li>
                 </ul>
             </div>
@@ -235,8 +223,8 @@
     <div class="sub-header-group">
         <div class="sub-header">
             <div class="ui dropdown"><a href="#" class="category_drop hover-btn" data-toggle="modal"
-                                        data-target="#category_model" title="Categories"><i
-                    class="uil uil-apps"></i><span class="cate__icon">Select Category</span></a></div>
+                                        data-target="#category_model" title="Wybierz kategorię"><i
+                    class="uil uil-apps"></i><span class="cate__icon">Wybierz kategorię</span></a></div>
             <nav class="navbar navbar-expand-lg navbar-light py-3">
                 <div class="container-fluid">
                     <button class="navbar-toggler menu_toggle_btn" type="button" data-target="#navbarSupportedContent">

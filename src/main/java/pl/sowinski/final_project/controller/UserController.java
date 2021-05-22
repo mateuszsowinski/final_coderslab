@@ -33,10 +33,7 @@ public class UserController {
         model.addAttribute("user", user);
         return "register";
     }
-    @GetMapping("/empty")
-    public String emptyPage(){
-        return "empty";
-    }
+
 
     @PostMapping("/register")
     public String addUser(@ModelAttribute("user")@Valid User user, BindingResult bindingResult){

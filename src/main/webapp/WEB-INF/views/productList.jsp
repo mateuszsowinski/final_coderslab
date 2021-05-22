@@ -12,8 +12,8 @@
                 <div class="col-md-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Request Product</li>
+                            <li class="breadcrumb-item"><a href="">Strona główna</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Dodaj kategorię</li>
                         </ol>
                     </nav>
                 </div>
@@ -28,15 +28,30 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="request-products">
-                        <form:form method="post" modelAttribute="category">
-                            <div class="form-group">
-                                <p hidden>  <form:input path="id" type="text" value=""/></div>
-                            </p>
-                            <form:input path="name" type="text" value="" placeholder="Nazwa kategorii"/>
-                            <form:errors path="name"/>
-                            <button class="next-btn16 hover-btn mt-3 rqst-btn" type="submit">Dadaj kategorię</button>
+                        <table
+                                class="table table-striped table-hover table-condensed table-bordered">
+                            <tr>
+                                <th>Id</th>
+                                <th>Nazwa</th>
+                                <th>Cena</th>
+                                <th>Opis</th>
+                                <th>Usuń</th>
+                                <th>Edytuj</th>
+                                <th>Szczegóły</th>
+                            </tr>
+                            <c:forEach var="products" items="${products}">
+                                <tr>
+                                    <td>${products.id}</td>
+                                    <td>${products.name}</td>
+                                    <td>${products.price}</td>
+                                    <td>${products.description}</td>
+                                    <td><a href="/app/product/delete/${products.id}">Usuń</a></td>
+                                    <td><a href="/app/product/update/${products.id}">Edytuj</a></td>
+                                    <td><a href="/app/product/show/${products.id}">Szczegóły</a></td>
 
-                        </form:form>
+                                </tr>
+                            </c:forEach>
+                        </table>
                     </div>
                 </div>
             </div>

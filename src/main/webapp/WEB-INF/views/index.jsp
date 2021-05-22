@@ -652,6 +652,7 @@
                 </div>
             </div>
         </div>
-    </div><!-- New Products End --></div><!-- Body End --><!-- Footer Start -->
+    </div><!-- New Products End -->
+</div><!-- Body End --><!-- Footer Start -->
 
     <%@ include file="/WEB-INF/views/footerLoginUser.jsp" %>

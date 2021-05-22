@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: mateuszsowinski
+  Date: 22/05/2021
+  Time: 15:12
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -28,15 +35,20 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="request-products">
-                        <form:form method="post" modelAttribute="category">
-                            <div class="form-group">
-                                <p hidden>  <form:input path="id" type="text" value=""/></div>
-                            </p>
-                            <form:input path="name" type="text" value="" placeholder="Nazwa kategorii"/>
-                            <form:errors path="name"/>
-                            <button class="next-btn16 hover-btn mt-3 rqst-btn" type="submit">Dadaj kategorię</button>
+                        <table
+                                class="table table-striped table-hover table-condensed table-bordered">
+                            <tr>
+                                <th>Id</th>
+                                <th>Nazwa</th>
 
-                        </form:form>
+                            </tr>
+                            <c:forEach var="categories" items="${categories}">
+                                <tr>
+                                    <td>${categories.id}</td>
+                                    <td>${categories.name}</td>
+                                </tr>
+                            </c:forEach>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -57,3 +69,4 @@
 </div><!-- Body End --><!-- Footer Start -->
 
 <%@ include file="/WEB-INF/views/footerLoginUser.jsp" %>
+
