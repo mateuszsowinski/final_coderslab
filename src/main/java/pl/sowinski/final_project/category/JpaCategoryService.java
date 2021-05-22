@@ -1,12 +1,13 @@
 package pl.sowinski.final_project.category;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import pl.sowinski.final_project.model.Category;
 import pl.sowinski.final_project.repository.CategoryRepository;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class JpaCategoryService implements CategoryService {
     @Autowired
     public final CategoryRepository categoryRepository;

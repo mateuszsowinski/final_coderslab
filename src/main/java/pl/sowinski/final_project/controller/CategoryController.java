@@ -1,6 +1,5 @@
 package pl.sowinski.final_project.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,19 +13,25 @@ import javax.validation.Valid;
 @Controller
 public class CategoryController {
 
+    public final CategoryService categoryService;
+
+    public CategoryController(CategoryService categoryService) {
+        this.categoryService = categoryService;
+    }
+
     @GetMapping("/app/category")
     public String category(Model model){
         Category category = new Category();
         model.addAttribute("category", category);
         return "categoryForm";
     }
-//    @PostMapping("/app/category")
-//    public String addCategory(@ModelAttribute("category")@Valid Category category, BindingResult bindingResult){
-//        if(bindingResult.hasErrors()){
-//            return "categoryForm";
-//        }
-//        categoryService.add(category);
-//        return "redirect:/app/category/list";
-//    }
+    @PostMapping("/app/category")
+    public String addCategory(@ModelAttribute("category")@Valid Category category, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return "categoryForm";
+        }
+        categoryService.add(category);
+        return "redirect:/app/category/list";
+    }
 
 }

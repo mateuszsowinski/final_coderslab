@@ -2,13 +2,14 @@ package pl.sowinski.final_project.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import pl.sowinski.final_project.model.User;
 import pl.sowinski.final_project.repository.UserRepository;
 
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+@Service
 public class JpaUserService implements UserService {
     @Autowired
     private final UserRepository userRepository;
