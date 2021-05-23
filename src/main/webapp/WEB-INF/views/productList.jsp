@@ -24,7 +24,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
-                    <div class="default-title"><h2>Dodawanie kategorii</h2><img src="images/line.svg" alt=""></div>
+                    <div class="default-title"><h2>Dodawanie produktu</h2><img src="images/line.svg" alt=""></div>
                 </div>
                 <div class="col-lg-6">
                     <div class="request-products">
@@ -34,7 +34,6 @@
                                 <th>Id</th>
                                 <th>Nazwa</th>
                                 <th>Cena</th>
-                                <th>Opis</th>
                                 <th>Usuń</th>
                                 <th>Edytuj</th>
                                 <th>Szczegóły</th>
@@ -44,7 +43,6 @@
                                     <td>${products.id}</td>
                                     <td>${products.name}</td>
                                     <td>${products.price}</td>
-                                    <td>${products.description}</td>
                                     <td><a href="/app/product/delete/${products.id}">Usuń</a></td>
                                     <td><a href="/app/product/update/${products.id}">Edytuj</a></td>
                                     <td><a href="/app/product/show/${products.id}">Szczegóły</a></td>
@@ -62,7 +60,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="default-title"><h2></h2>
-                        <p>How Do I order for Request on Gambo</p><img src="images/line.svg" alt=""></div>
+                        <p></p><img src="images/line.svg" alt=""></div>
                 </div>
 
             </div>

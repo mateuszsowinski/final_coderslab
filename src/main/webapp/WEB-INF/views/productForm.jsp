@@ -37,8 +37,10 @@
                             <form:errors path="price"/>
                             <form:input path="description" type="text" value="" placeholder="Opis Produktu"/>
                             <form:errors path="description"/>
+                            <form:input path="url" type="text" value="" placeholder="Link"/>
+                            <form:errors path="url"/>
                             <form:select  itemValue="id" itemLabel="name" path="category.id" items="${categoryModel}">
-                                <form:errors path="category" cssClass="error"/>
+                                <form:errors path="category"/>
 
                             </form:select>
 

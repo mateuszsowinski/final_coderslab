@@ -47,7 +47,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="default-title"><h2></h2>
-                        <p>How Do I order for Request on Gambo</p><img src="images/line.svg" alt=""></div>
+                        <p></p><img src="images/line.svg" alt=""></div>
                 </div>
 
             </div>

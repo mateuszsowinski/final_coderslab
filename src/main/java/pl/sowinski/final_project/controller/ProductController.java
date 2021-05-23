@@ -9,6 +9,7 @@ import pl.sowinski.final_project.model.Category;
 import pl.sowinski.final_project.model.Product;
 import pl.sowinski.final_project.product.ProductService;
 
+import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
 import java.util.Collection;
 import java.util.List;
@@ -50,36 +51,27 @@ public class ProductController {
         productService.delete(id);
         return "redirect:/app/product/list";
     }
-
-
+    @GetMapping("/update/{id:\\d+}")
+    public String updateProductForm(@PathVariable Long id,Model model){
+        model.addAttribute("product", productService.getProductById(id));
+        return "productForm";
+    }
+    @PostMapping("/update/{id:\\d+}")
+    public String updateProductPost(@ModelAttribute("product")@Valid Product product,BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return "productForm";
+        }
+        productService.update(product);
+        return "redirect:/app/product/list";
+    }
+    @GetMapping("/show/{id:\\d+}")
+    public String showProduct (@PathVariable Long id, Model model){
+        model.addAttribute("product", productService.getProductById(id).orElseThrow(EntityNotFoundException::new));
+        return "product";
+    }
     @ModelAttribute("categoryModel")
     public Collection<Category> categories(){
         return jpaCategoryService.getCategory();
     }
 
 }
-
-//    //Delete
-//    @GetMapping(value = "/delete/{id:\\d+}")
-//    public String deleteBook(@PathVariable Long id) {
-//        bookService.deleteBook(id);
-//        return "redirect:/admin/books/all";
-//    }
-
-//    //Update
-//    //show form
-//    @GetMapping(value = "/update/{id:\\d+}")
-//    public String updateBookForm(@PathVariable Long id, Model model) {
-//        model.addAttribute("books", bookService.getBookById(id));
-//        return "bookForm";
-//    }
-//
-//    //service
-//    @PostMapping(value = "/update/{id:\\d+}")
-//    public String updateBookPost(@ModelAttribute("books") @Valid Book book, BindingResult bindingResult) {
-//        if (bindingResult.hasErrors()) {
-//            return "bookForm";
-//        }
-//        bookService.updateBook(book);
-//        return "redirect:/admin/books/all";
-//    }
