@@ -20,8 +20,8 @@ public class Cart {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "package_id")
-    private Package aPackage;
+    @JoinColumn(name = "promo_id")
+    private Promo promo;
 
     private int quantity;
 

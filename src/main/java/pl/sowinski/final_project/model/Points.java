@@ -21,8 +21,8 @@ public class Points {
     @JoinColumn(name = "user_id")
     private User user;
     @ManyToOne
-    @JoinColumn(name = "package_id")
-    private Package aPackage;
+    @JoinColumn(name = "promo_id")
+    private Promo promo;
     private int points;
 
 }

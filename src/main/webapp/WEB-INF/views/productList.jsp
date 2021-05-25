@@ -13,7 +13,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">Strona główna</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Dodaj kategorię</li>
+                            <li class="breadcrumb-item active" aria-current="page">Lista Produktów</li>
                         </ol>
                     </nav>
                 </div>
@@ -24,7 +24,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
-                    <div class="default-title"><h2>Dodawanie produktu</h2><img src="images/line.svg" alt=""></div>
+                    <div class="default-title"><h2>Lista produktów</h2><img src="/images/line.svg" alt=""></div>
                 </div>
                 <div class="col-lg-6">
                     <div class="request-products">
@@ -60,7 +60,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="default-title"><h2></h2>
-                        <p></p><img src="images/line.svg" alt=""></div>
+                        <p></p><img src="/images/line.svg" alt=""></div>
                 </div>
 
             </div>

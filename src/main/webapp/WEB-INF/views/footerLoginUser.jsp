@@ -74,24 +74,24 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="second-row-item-app"><h4>Download App</h4>
                         <ul>
-                            <li><a href="#"><img class="download-btn" src="images/download-1.svg" alt=""></a></li>
-                            <li><a href="#"><img class="download-btn" src="images/download-2.svg" alt=""></a></li>
+                            <li><a href="#"><img class="download-btn" src="/images/download-1.svg" alt=""></a></li>
+                            <li><a href="#"><img class="download-btn" src="/images/download-2.svg" alt=""></a></li>
                         </ul>
                     </div>
                     <div class="second-row-item-payment"><h4>Payment Method</h4>
                         <div class="footer-payments">
                             <ul id="paypal-gateway" class="financial-institutes">
                                 <li class="financial-institutes__logo"><img alt="Visa" title="Visa"
-                                                                            src="images/footer-icons/pyicon-6.svg"></li>
+                                                                            src="/images/footer-icons/pyicon-6.svg"></li>
                                 <li class="financial-institutes__logo"><img alt="Visa" title="Visa"
-                                                                            src="images/footer-icons/pyicon-1.svg"></li>
+                                                                            src="/images/footer-icons/pyicon-1.svg"></li>
                                 <li class="financial-institutes__logo"><img alt="MasterCard" title="MasterCard"
-                                                                            src="images/footer-icons/pyicon-2.svg"></li>
+                                                                            src="/images/footer-icons/pyicon-2.svg"></li>
                                 <li class="financial-institutes__logo"><img alt="American Express"
                                                                             title="American Express"
-                                                                            src="images/footer-icons/pyicon-3.svg"></li>
+                                                                            src="/images/footer-icons/pyicon-3.svg"></li>
                                 <li class="financial-institutes__logo"><img alt="Discover" title="Discover"
-                                                                            src="images/footer-icons/pyicon-4.svg"></li>
+                                                                            src="/images/footer-icons/pyicon-4.svg"></li>
                             </ul>
                         </div>
                     </div>
@@ -128,13 +128,13 @@
     </div>
 
 </footer><!-- Footer End --><!-- Javascripts -->
-<script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script>
-<script src="<c:url value="/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
-<script src="<c:url value="/vendor/OwlCarousel/owl.carousel.js"/>"></script>
-<script src="<c:url value="/vendor/semantic/semantic.min.js"/>"></script>
-<script src="<c:url value="/js/jquery.countdown.min.js"/>"></script>
-<script src="<c:url value="/js/custom.js"/>"></script>
-<script src="<c:url value="/js/offset_overlay.js"/>"></script>
-<script src="<c:url value="/js/night-mode.js"/>"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="${pageContext.request.contextPath}/vendor/OwlCarousel/owl.carousel.js"></script>
+<script src="${pageContext.request.contextPath}/vendor/semantic/semantic.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.countdown.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/custom.js"></script>
+<script src="${pageContext.request.contextPath}/js/offset_overlay.js"></script>
+<script src="${pageContext.request.contextPath}/js/night-mode.js"></script>
 </body>
 </html>

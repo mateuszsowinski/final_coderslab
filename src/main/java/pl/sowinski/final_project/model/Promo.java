@@ -6,21 +6,26 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
-@Table(name = "package")
+@Table(name = "promo")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Package {
+public class Promo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String name;
     @ManyToMany
     @JoinColumn(name = "product_id")
-    private List<Product> product;
+    private List<Product> product_item;
     private int quantity;
+    @Lob
     private String description;
+    @ManyToOne
+    private Product product;
 }

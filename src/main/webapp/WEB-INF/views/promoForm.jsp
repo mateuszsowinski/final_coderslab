@@ -24,25 +24,32 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
-                    <div class="default-title"><h2>Dodaj Produkt</h2><img src="images/line.svg" alt=""></div>
+                    <div class="default-title"><h2>Dodaj Produkt</h2><img src="/images/line.svg" alt=""></div>
                 </div>
                 <div class="col-lg-6">
                     <div class="request-products">
-                        <form:form method="post" modelAttribute="product">
+
+                        <form:form method="post" modelAttribute="promo">
                             <div class="form-group">
                               <p hidden>  <form:input path="id" type="text" value="" /></div></p>
-                            <form:input path="name" type="text" value="" placeholder="Nazwa produktu"/></p>
+                            <form:input path="name" type="text" value="" placeholder="Nazwa promocji"/></p>
                             <form:errors path="name"/>
-                            <form:input path="price" type="text" value="" placeholder="Cena produktu" /></p>
-                            <form:errors path="price"/>
-                            <form:input path="description" type="text" value="" placeholder="Opis Produktu"/></p>
-                            <form:errors path="description"/>
-                            <form:input path="url" type="text" value="" placeholder="Link"/></p>
-                            <form:errors path="url"/>
-                            <form:select  itemValue="id" itemLabel="name" path="category.id" items="${categoryModel}">
-                                <form:errors path="category"/>
+
+                            <form:select  itemValue="id" itemLabel="name" path="product.id" items="${productModel}">
+                                <form:errors path="product"/>
 
                             </form:select>
+
+                            <form:input path="quantity" type="number" value="" min="0" placeholder="Ilość" /></p>
+                            <form:errors path="quantity"/>
+<%--                            <form:input path="description" type="text" value="" placeholder="Opis Produktu"/>--%>
+<%--                            <form:errors path="description"/>--%>
+<%--                            <form:input path="url" type="text" value="" placeholder="Link"/>--%>
+<%--                            <form:errors path="url"/>--%>
+<%--                            <form:select  itemValue="id" itemLabel="name" path="category.id" items="${categoryModel}">--%>
+<%--                                <form:errors path="category"/>--%>
+
+<%--                            </form:select>--%>
 
                             <button class="next-btn16 hover-btn mt-3 rqst-btn" type="submit">Dodaj produkt</button>
 
@@ -57,7 +64,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="default-title"><h2></h2>
-                        <p></p><img src="images/line.svg" alt=""></div>
+                        <p></p><img src="/images/line.svg" alt=""></div>
                 </div>
 
                 </div>

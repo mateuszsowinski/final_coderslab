@@ -45,11 +45,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/app/*")
+        http.authorizeRequests().antMatchers("/app/**")
                 .authenticated()
                 .anyRequest()
                 .permitAll().and()
                 .formLogin().usernameParameter("email").defaultSuccessUrl("/app/welcome")
-                .permitAll().and().logout().logoutSuccessUrl("/").permitAll();
+                .permitAll().and().logout().logoutSuccessUrl("/logout").permitAll();
+//        http.authorizeRequests().antMatchers("/css/**", "/js/**", "/vendor/**").permitAll();}
     }
 }

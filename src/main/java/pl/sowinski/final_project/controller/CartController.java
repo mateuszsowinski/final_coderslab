@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
 import pl.sowinski.final_project.category.JpaCategoryService;
 import pl.sowinski.final_project.model.Cart;
 import pl.sowinski.final_project.model.Category;
@@ -11,7 +12,7 @@ import pl.sowinski.final_project.model.Category;
 import java.util.Collection;
 
 @Controller
-//@RequestMapping("/app/*")
+@RequestMapping("/app/*")
 public class CartController {
 
     public final JpaCategoryService jpaCategoryService;

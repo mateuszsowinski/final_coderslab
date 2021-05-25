@@ -17,18 +17,18 @@
     <meta name="description" content="Gambolthemes">
     <meta name="author" content="Gambolthemes">
     <title>Targi Online</title><!-- Favicon Icon -->
-    <link rel="icon" type="image/png" href="images/fav.png"><!-- Stylesheets -->
+    <link rel="icon" type="/image/png" href="/images/fav.png"><!-- Stylesheets -->
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
           rel="stylesheet">
-    <link href='<c:url value="/vendor/unicons-2.0.1/css/unicons.css"/>' rel='stylesheet'>
-    <link href="<c:url value="/css/style.css"/>" rel="stylesheet">
-    <link href="<c:url value="/css/responsive.css"/>" rel="stylesheet">
-    <link href="<c:url value="/css/night-mode.css"/>" rel="stylesheet"><!-- Vendor Stylesheets -->
-    <link href="<c:url value="/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet">
-    <link href="<c:url value="/vendor/OwlCarousel/assets/owl.carousel.css"/>" rel="stylesheet">
-    <link href="<c:url value="/vendor/OwlCarousel/assets/owl.theme.default.min.css"/>" rel="stylesheet">
-    <link href="<c:url value="/vendor/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="vendor/semantic/semantic.min.css">
+    <link href='${pageContext.request.contextPath}/vendor/unicons-2.0.1/css/unicons.css' rel='stylesheet'>
+    <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/responsive.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/night-mode.css" rel="stylesheet"><!-- Vendor Stylesheets -->
+    <link href="${pageContext.request.contextPath}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/vendor/semantic/semantic.min.css">
 </head>
 <body><!-- Category Model Start-->
 <div id="category_model" class="header-cate-model main-gambo-model modal fade" tabindex="-1" role="dialog"
@@ -44,7 +44,7 @@
                 <ul class="category-by-cat">
                     <c:forEach items="${categoryModel}" var="categories">
                     <li><a href="#" class="single-cat-item">
-                        <div class="icon"><img src="images/category/icon-1.svg" alt=""></div>
+                        <div class="icon"><img src="/images/category/icon-1.svg" alt=""></div>
                         <div class="text">${categories.name}</div>
                     </a></li>
                     </c:forEach>
@@ -68,31 +68,31 @@
                     </form>
                 </div>
                 <div class="search-by-cat"><a href="#" class="single-cat">
-                    <div class="icon"><img src="images/category/icon-1.svg" alt=""></div>
+                    <div class="icon"><img src="/images/category/icon-1.svg" alt=""></div>
                     <div class="text">Fruits and Vegetables</div>
                 </a><a href="#" class="single-cat">
-                    <div class="icon"><img src="images/category/icon-2.svg" alt=""></div>
+                    <div class="icon"><img src="/images/category/icon-2.svg" alt=""></div>
                     <div class="text">Grocery & Staples</div>
                 </a><a href="#" class="single-cat">
-                    <div class="icon"><img src="images/category/icon-3.svg" alt=""></div>
+                    <div class="icon"><img src="/images/category/icon-3.svg" alt=""></div>
                     <div class="text">Dairy & Eggs</div>
                 </a><a href="#" class="single-cat">
-                    <div class="icon"><img src="images/category/icon-4.svg" alt=""></div>
+                    <div class="icon"><img src="/images/category/icon-4.svg" alt=""></div>
                     <div class="text">Beverages</div>
                 </a><a href="#" class="single-cat">
-                    <div class="icon"><img src="images/category/icon-5.svg" alt=""></div>
+                    <div class="icon"><img src="/images/category/icon-5.svg" alt=""></div>
                     <div class="text">Snacks</div>
                 </a><a href="#" class="single-cat">
-                    <div class="icon"><img src="images/category/icon-6.svg" alt=""></div>
+                    <div class="icon"><img src="/images/category/icon-6.svg" alt=""></div>
                     <div class="text">Home Care</div>
                 </a><a href="#" class="single-cat">
-                    <div class="icon"><img src="images/category/icon-7.svg" alt=""></div>
+                    <div class="icon"><img src="/images/category/icon-7.svg" alt=""></div>
                     <div class="text">Noodles & Sauces</div>
                 </a><a href="#" class="single-cat">
-                    <div class="icon"><img src="images/category/icon-8.svg" alt=""></div>
+                    <div class="icon"><img src="/images/category/icon-8.svg" alt=""></div>
                     <div class="text">Personal Care</div>
                 </a><a href="#" class="single-cat">
-                    <div class="icon"><img src="images/category/icon-9.svg" alt=""></div>
+                    <div class="icon"><img src="/images/category/icon-9.svg" alt=""></div>
                     <div class="text">Pet Care</div>
                 </a></div>
             </div>
@@ -112,7 +112,7 @@
 
         <div class="side-cart-items">
             <div class="cart-item">
-                <div class="cart-product-img"><img src="images/product/img-1.jpg" alt="">
+                <div class="cart-product-img"><img src="/images/product/img-1.jpg" alt="">
                     <div class="offer-badge">6% OFF</div>
                 </div>
                 <div class="cart-text"><h4>Product Title Here</h4>
@@ -144,9 +144,9 @@
 <header class="header clearfix">
     <div class="top-header-group">
         <div class="top-header">
-            <div class="res_main_logo"><a href="/"><img src="images/dark-logo-1.svg" alt=""></a></div>
-            <div class="main_logo" id="logo"><a href="/"><img src="images/logo.svg" alt=""></a><a
-                    href="/"><img class="logo-inverse" src="images/dark-logo.svg" alt=""></a></div>
+            <div class="res_main_logo"><a href="/"><img src="/images/dark-logo-1.svg" alt=""></a></div>
+            <div class="main_logo" id="logo"><a href="/"><img src="/images/logo.svg" alt=""></a><a
+                    href="/"><img class="logo-inverse" src="/images/dark-logo.svg" alt=""></a></div>
             <div class="select_location">
 
             </div>
@@ -164,7 +164,7 @@
 <%--                    <li><a href="faq.html" class="offer-link"><i class="uil uil-question-circle"></i>Help</a></li>--%>
 <%--                    <li><a href="dashboard_my_wishlist.html" class="option_links" title="Wishlist"><i--%>
 <%--                            class='uil uil-heart icon_wishlist'></i><span class="noti_count1">3</span></a></li>--%>
-                    <li class="ui dropdown"><a href="#" class="opts_account"><img src="images/avatar/img-5.jpg"
+                    <li class="ui dropdown"><a href="#" class="opts_account"><img src="/images/avatar/img-5.jpg"
                                                                                   alt=""><span class="user__name">John Doe</span><i
                             class="uil uil-angle-down"></i></a>
                         <div class="menu dropdown_account">
@@ -203,48 +203,29 @@
                          id="navbarSupportedContent">
                         <ul class="navbar-nav main_nav align-self-stretch">
                             <li class="nav-item"><a href="/" class="nav-link active" title="Strona główna">Strona główna</a></li>
-                            <li class="nav-item"><a href="/app/product" class="nav-link new_item"
-                                                    title="Produkty">Produkty</a></li>
-                            <li class="nav-item"><a href="/app/category" class="nav-link" title="Kategorie">Kategorie
-                                </a></li>
+<%--                            <li class="nav-item"><a href="/app/product" class="nav-link new_item"--%>
+<%--                                                    title="Produkty">Produkty</a></li>--%>
+<%--                            <li class="nav-item"><a href="/app/category" class="nav-link" title="Kategorie">Kategorie--%>
+<%--                                </a></li>--%>
                             <li class="nav-item">
-                                <div class="ui icon top left dropdown nav__menu"><a class="nav-link" title="Pages">Pages
+                                <div class="ui icon top left dropdown nav__menu"><a class="nav-link" title="Produkty">Produkty
                                     <i class="uil uil-angle-down"></i></a>
-                                    <div class="menu dropdown_page"><a href="dashboard_overview.html"
-                                                                       class="item channel_item page__links">Account</a><a
-                                            href="about_us.html" class="item channel_item page__links">About Us</a><a
-                                            href="shop_grid.html" class="item channel_item page__links">Shop Grid</a><a
-                                            href="single_product_view.html" class="item channel_item page__links">Single
-                                        Product View</a><a href="checkout.html" class="item channel_item page__links">Checkout</a><a
-                                            href="request_product.html" class="item channel_item page__links">Product
-                                        Request</a><a href="order_placed.html" class="item channel_item page__links">Order
-                                        Placed</a><a href="bill.html" class="item channel_item page__links">Bill
-                                        Slip</a><a href="sign_in.html" class="item channel_item page__links">Sign In</a><a
-                                            href="sign_up.html" class="item channel_item page__links">Sign Up</a><a
-                                            href="forgot_password.html" class="item channel_item page__links">Forgot
-                                        Password</a><a href="contact_us.html" class="item channel_item page__links">Contact
-                                        Us</a></div>
+                                    <div class="menu dropdown_page"><a href="/app/product/list" class="item channel_item page__links">Lista produktów</a><a
+                                            href="/app/product" class="item channel_item page__links">Dodaj produkt</a></div>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <div class="ui icon top left dropdown nav__menu"><a class="nav-link" title="Blog">Blog
+                                <div class="ui icon top left dropdown nav__menu"><a class="nav-link" title="Kategorie">Kategorie
                                     <i class="uil uil-angle-down"></i></a>
-                                    <div class="menu dropdown_page"><a href="our_blog.html"
-                                                                       class="item channel_item page__links">Our
-                                        Blog</a><a href="blog_no_sidebar.html" class="item channel_item page__links">Our
-                                        Blog Two No Sidebar</a><a href="blog_left_sidebar.html"
-                                                                  class="item channel_item page__links">Our Blog with
-                                        Left Sidebar</a><a href="blog_right_sidebar.html"
-                                                           class="item channel_item page__links">Our Blog with Right
-                                        Sidebar</a><a href="blog_detail_view.html"
-                                                      class="item channel_item page__links">Blog Detail View</a><a
-                                            href="blog_left_sidebar_single_view.html"
-                                            class="item channel_item page__links">Blog Detail View with Sidebar</a>
+                                    <div class="menu dropdown_page"><a href="/app/category/list"
+                                                                       class="item channel_item page__links">Lista Kategori</a>
+                                        <a href="/app/category" class="item channel_item page__links">Dodaj kategorię</a>
+
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item"><a href="contact_us.html" class="nav-link" title="Contact">Contact
-                                Us</a></li>
+<%--                            <li class="nav-item"><a href="contact_us.html" class="nav-link" title="Contact">Contact--%>
+                            <%--                                Us</a></li>--%>
                         </ul>
                     </div>
                 </div>

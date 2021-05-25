@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.validator.constraints.URL;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
 @Entity
@@ -19,6 +20,7 @@ public class Product {
     private String name;
     @Column(precision=10, scale=2)
     private BigDecimal price;
+    @Lob
     private String description;
     @URL
     private String url;
