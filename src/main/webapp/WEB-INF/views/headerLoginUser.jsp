@@ -131,12 +131,11 @@
                     <%--                    <li><a href="faq.html" class="offer-link"><i class="uil uil-question-circle"></i>Help</a></li>--%>
                     <%--                    <li><a href="dashboard_my_wishlist.html" class="option_links" title="Wishlist"><i--%>
                     <%--                            class='uil uil-heart icon_wishlist'></i><span class="noti_count1">3</span></a></li>--%>
+                        <security:authorize access="isAuthenticated()">
                     <li class="ui dropdown"><a href="#" class="opts_account"><img src="/images/avatar/img-5.jpg"
                                                                                   alt=""><span
                             class="user__name">
-                        <security:authorize access="isAuthenticated()">
                         <security:authentication property="principal.username"/>
-                        </security:authorize>
                     </span><i
                             class="uil uil-angle-down"></i></a>
                         <div class="menu dropdown_account">
@@ -158,6 +157,11 @@
                             <%--                                class="uil uil-gift icon__1"></i>Offers</a><a href="faq.html" class="item channel_item"><i--%>
                             <%--                                class="uil uil-info-circle icon__1"></i>Faq</a>--%>
                             <a href="${pageContext.request.contextPath}/logout" class="item channel_item"><i class="uil uil-lock-alt icon__1"></i>Wyloguj</a>
+                                </security:authorize>
+                                <security:authorize access="!isAuthenticated()">
+                                <a href="/login" type="submit" >Zaloguj</a>
+                                </security:authorize>
+
                         </div>
                     </li>
                 </ul>
