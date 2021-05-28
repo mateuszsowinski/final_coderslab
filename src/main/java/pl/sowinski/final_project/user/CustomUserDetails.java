@@ -1,5 +1,7 @@
 package pl.sowinski.final_project.user;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import pl.sowinski.final_project.model.User;
@@ -9,6 +11,7 @@ import java.util.Collection;
 public class CustomUserDetails implements UserDetails {
     
     private final User user;
+    private final Logger logger = LoggerFactory.getLogger(CustomUserDetails.class);
 
     public CustomUserDetails(User user) {
         this.user = user;
@@ -26,6 +29,7 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public String getUsername() {
+        logger.info(String.valueOf(user.getId()));
         return user.getEmail();
     }
 

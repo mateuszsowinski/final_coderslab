@@ -25,4 +25,13 @@ public class Cart {
 
     private int quantity;
 
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "id=" + id +
+                ", user=" + user +
+                ", promo=" + promo +
+                ", quantity=" + quantity +
+                '}';
+    }
 }

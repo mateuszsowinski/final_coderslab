@@ -7,7 +7,11 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "promo")
@@ -22,10 +26,21 @@ public class Promo {
     private String name;
     @ManyToMany
     @JoinColumn(name = "product_id")
-    private List<Product> product_item;
+    private Set<Product> product_item = new HashSet<>();
     private int quantity;
     @Lob
     private String description;
-    @ManyToOne
-    private Product product;
+    private BigDecimal price;
+
+    @Override
+    public String toString() {
+        return "Promo{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", product_item=" + product_item +
+                ", quantity=" + quantity +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

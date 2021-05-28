@@ -8,23 +8,30 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import pl.sowinski.final_project.model.Promo;
 import pl.sowinski.final_project.model.User;
+import pl.sowinski.final_project.promo.JpaPromoService;
 import pl.sowinski.final_project.user.UserService;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class UserController {
 
     @Autowired
     public final UserService userService;
+    public final JpaPromoService jpaPromoService;
 
-    public UserController(UserService userService) {
+    public UserController(UserService userService, JpaPromoService jpaPromoService) {
         this.userService = userService;
+        this.jpaPromoService = jpaPromoService;
     }
 
     @GetMapping("")
-    public String startingPage(){
+    public String startingPage(Model model){
+        List<Promo> promoList = jpaPromoService.getPromo();
+        model.addAttribute("promoList", promoList);
         return "index";
     }
     @GetMapping("/register")

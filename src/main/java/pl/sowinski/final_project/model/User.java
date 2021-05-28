@@ -30,4 +30,16 @@ public class User {
     @NotBlank
     @Pattern(regexp="(^$|[0-9]{9})", message = "Mogą byc tylko liczby")
     private String phoneNumber;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
+    }
 }

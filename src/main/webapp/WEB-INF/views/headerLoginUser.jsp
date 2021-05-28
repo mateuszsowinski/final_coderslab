@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +28,8 @@
     <link href="${pageContext.request.contextPath}/css/night-mode.css" rel="stylesheet"><!-- Vendor Stylesheets -->
     <link href="${pageContext.request.contextPath}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/vendor/OwlCarousel/assets/owl.theme.default.min.css"
+          rel="stylesheet">
     <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/vendor/semantic/semantic.min.css">
 </head>
@@ -43,10 +46,10 @@
                 <div class="cate-header"><h4>Wybierz kategorię</h4></div>
                 <ul class="category-by-cat">
                     <c:forEach items="${categoryModel}" var="categories">
-                    <li><a href="#" class="single-cat-item">
-                        <div class="icon"><img src="/images/category/icon-1.svg" alt=""></div>
-                        <div class="text">${categories.name}</div>
-                    </a></li>
+                        <li><a href="#" class="single-cat-item">
+                            <div class="icon"><img src="/images/category/icon-1.svg" alt=""></div>
+                            <div class="text">${categories.name}</div>
+                        </a></li>
                     </c:forEach>
                 </ul>
                 <a href="#" class="morecate-btn"><i class="uil uil-apps"></i>Więcej</a></div>
@@ -99,48 +102,10 @@
         </div>
     </div>
 </div><!-- Search Model End--><!-- Cart Sidebar Offset Start-->
-<div class="bs-canvas bs-canvas-left position-fixed bg-cart h-100">
-    <div class="bs-canvas-header side-cart-header p-3 ">
-        <div class="d-inline-block  main-cart-title">Koszyk <span>(2 Items)</span></div>
-        <button type="button" class="bs-canvas-close close" aria-label="Close"><i class="uil uil-multiply"></i></button>
-    </div>
-    <div class="bs-canvas-body">
-        <div class="cart-top-total">
-            <%--            <div class="cart-total-dil"><h4>Targi on-line</h4><span>$34</span></div>--%>
-            <%--            <div class="cart-total-dil pt-2"><h4>Delivery Charges</h4><span>$1</span></div>--%>
-        </div>
 
-        <div class="side-cart-items">
-            <div class="cart-item">
-                <div class="cart-product-img"><img src="/images/product/img-1.jpg" alt="">
-                    <div class="offer-badge">6% OFF</div>
-                </div>
-                <div class="cart-text"><h4>Product Title Here</h4>
-                    <div class="cart-radio">
+<%@ include file="/WEB-INF/views/cartList.jsp" %>
 
-                    </div>
-                    <div class="qty-group">
-                        <div class="quantity buttons_added"><input type="button" value="-"
-                                                                   class="minus minus-btn"><input type="number" step="1"
-                                                                                                  name="quantity"
-                                                                                                  value="1"
-                                                                                                  class="input-text qty text"><input
-                                type="button" value="+" class="plus plus-btn"></div>
-                        <div class="cart-item-price">$10 </div>
-                    </div>
-                    <button type="button" class="cart-close-btn"><i class="uil uil-multiply"></i></button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="bs-canvas-footer">
-        <div class="cart-total-dil saving-total "><h4>Kwota końcowa</h4><span>$11</span></div>
-        <div class="main-total-cart"><h2>Wartość:</h2><span>$35</span></div>
-        <div class="checkout-cart"><a href="" class="promo-code"></a><a href="#" class="cart-checkout-btn hover-btn">Kup
-        </a></div>
-    </div>
-</div><!-- Cart Sidebar Offsetl End--><!-- Header Start -->
+<!-- Cart Sidebar Offsetl End--><!-- Header Start -->
 <header class="header clearfix">
     <div class="top-header-group">
         <div class="top-header">
@@ -159,13 +124,20 @@
             </div>
             <div class="header_right">
                 <ul>
-<%--                    <li><a href="#" class="offer-link"><i class="uil uil-phone-alt"></i>1800-000-000</a></li>--%>
-<%--                    <li><a href="offers.html" class="offer-link"><i class="uil uil-gift"></i>Offers</a></li>--%>
-<%--                    <li><a href="faq.html" class="offer-link"><i class="uil uil-question-circle"></i>Help</a></li>--%>
-<%--                    <li><a href="dashboard_my_wishlist.html" class="option_links" title="Wishlist"><i--%>
-<%--                            class='uil uil-heart icon_wishlist'></i><span class="noti_count1">3</span></a></li>--%>
+
+
+                    <%--                    <li><a href="#" class="offer-link"><i class="uil uil-phone-alt"></i>1800-000-000</a></li>--%>
+                    <%--                    <li><a href="offers.html" class="offer-link"><i class="uil uil-gift"></i>Offers</a></li>--%>
+                    <%--                    <li><a href="faq.html" class="offer-link"><i class="uil uil-question-circle"></i>Help</a></li>--%>
+                    <%--                    <li><a href="dashboard_my_wishlist.html" class="option_links" title="Wishlist"><i--%>
+                    <%--                            class='uil uil-heart icon_wishlist'></i><span class="noti_count1">3</span></a></li>--%>
                     <li class="ui dropdown"><a href="#" class="opts_account"><img src="/images/avatar/img-5.jpg"
-                                                                                  alt=""><span class="user__name">John Doe</span><i
+                                                                                  alt=""><span
+                            class="user__name">
+                        <security:authorize access="isAuthenticated()">
+                        <security:authentication property="principal.username"/>
+                        </security:authorize>
+                    </span><i
                             class="uil uil-angle-down"></i></a>
                         <div class="menu dropdown_account">
                             <div class="night_mode_switch__btn"><a href="#" id="night-mode" class="btn-night-mode"><i
@@ -175,16 +147,18 @@
                                     class="uil uil-apps icon__1"></i>Dashbaord</a><a href="dashboard_my_orders.html"
                                                                                      class="item channel_item"><i
                                 class="uil uil-box icon__1"></i>Zamówienia</a><a href="dashboard_my_wishlist.html"
-                                                                                class="item channel_item"><i
-<%--                                class="uil uil-heart icon__1"></i>My Wishlist</a><a href="dashboard_my_wallet.html"--%>
-<%--                                                                                    class="item channel_item"><i--%>
-                                class="uil uil-usd-circle icon__1"></i>Punkty</a><a
-                                href="dashboard_my_addresses.html" class="item channel_item"><i
-<%--                                class="uil uil-location-point icon__1"></i>My Address</a><a href="offers.html"--%>
-<%--                                                                                            class="item channel_item"><i--%>
-<%--                                class="uil uil-gift icon__1"></i>Offers</a><a href="faq.html" class="item channel_item"><i--%>
-<%--                                class="uil uil-info-circle icon__1"></i>Faq</a>--%>
-                            <a href="/logout" class="item channel_item"><i class="uil uil-lock-alt icon__1"></i>Wyloguj</a></div>
+                                                                                 class="item channel_item"><i
+                        <%--                                class="uil uil-heart icon__1"></i>My Wishlist</a><a href="dashboard_my_wallet.html"--%>
+                        <%--                                                                                    class="item channel_item"><i--%>
+                                class="uil uil-usd-circle icon__1"></i>Punkty</a>
+                            <a
+                                href="/logout" class="item channel_item"><i
+                            <%--                                class="uil uil-location-point icon__1"></i>My Address</a><a href="offers.html"--%>
+                            <%--                                                                                            class="item channel_item"><i--%>
+                            <%--                                class="uil uil-gift icon__1"></i>Offers</a><a href="faq.html" class="item channel_item"><i--%>
+                            <%--                                class="uil uil-info-circle icon__1"></i>Faq</a>--%>
+                            <a href="${pageContext.request.contextPath}/logout" class="item channel_item"><i class="uil uil-lock-alt icon__1"></i>Wyloguj</a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -202,29 +176,46 @@
                     <div class="collapse navbar-collapse d-flex flex-column flex-lg-row flex-xl-row justify-content-lg-end bg-dark1 p-3 p-lg-0 mt1-5 mt-lg-0 mobileMenu"
                          id="navbarSupportedContent">
                         <ul class="navbar-nav main_nav align-self-stretch">
-                            <li class="nav-item"><a href="/" class="nav-link active" title="Strona główna">Strona główna</a></li>
-<%--                            <li class="nav-item"><a href="/app/product" class="nav-link new_item"--%>
-<%--                                                    title="Produkty">Produkty</a></li>--%>
-<%--                            <li class="nav-item"><a href="/app/category" class="nav-link" title="Kategorie">Kategorie--%>
-<%--                                </a></li>--%>
+                            <li class="nav-item"><a href="/" class="nav-link active" title="Strona główna">Strona
+                                główna</a></li>
+                            <%--                            <li class="nav-item"><a href="/app/product" class="nav-link new_item"--%>
+                            <%--                                                    title="Produkty">Produkty</a></li>--%>
+                            <%--                            <li class="nav-item"><a href="/app/category" class="nav-link" title="Kategorie">Kategorie--%>
+                            <%--                                </a></li>--%>
                             <li class="nav-item">
                                 <div class="ui icon top left dropdown nav__menu"><a class="nav-link" title="Produkty">Produkty
                                     <i class="uil uil-angle-down"></i></a>
-                                    <div class="menu dropdown_page"><a href="/app/product/list" class="item channel_item page__links">Lista produktów</a><a
-                                            href="/app/product" class="item channel_item page__links">Dodaj produkt</a></div>
+                                    <div class="menu dropdown_page"><a
+                                            href="${pageContext.request.contextPath}/app/product/list"
+                                            class="item channel_item page__links">Lista produktów</a><a
+                                            href="${pageContext.request.contextPath}/app/product"
+                                            class="item channel_item page__links">Dodaj produkt</a></div>
                                 </div>
                             </li>
                             <li class="nav-item">
                                 <div class="ui icon top left dropdown nav__menu"><a class="nav-link" title="Kategorie">Kategorie
                                     <i class="uil uil-angle-down"></i></a>
-                                    <div class="menu dropdown_page"><a href="/app/category/list"
-                                                                       class="item channel_item page__links">Lista Kategori</a>
-                                        <a href="/app/category" class="item channel_item page__links">Dodaj kategorię</a>
+                                    <div class="menu dropdown_page"><a
+                                            href="${pageContext.request.contextPath}/app/category/list"
+                                            class="item channel_item page__links">Lista Kategorii</a>
+                                        <a href="${pageContext.request.contextPath}/app/category"
+                                           class="item channel_item page__links">Dodaj kategorię</a>
 
                                     </div>
                                 </div>
                             </li>
-<%--                            <li class="nav-item"><a href="contact_us.html" class="nav-link" title="Contact">Contact--%>
+                            <li class="nav-item">
+                                <div class="ui icon top left dropdown nav__menu"><a class="nav-link" title="Produkty">Promocje
+                                    <i class="uil uil-angle-down"></i></a>
+                                    <div class="menu dropdown_page"><a
+                                            href="${pageContext.request.contextPath}/app/promo/list"
+                                            class="item channel_item page__links">Lista Promocji</a><a
+                                            href="${pageContext.request.contextPath}/app/promo/add"
+                                            class="item channel_item page__links">Dodaj promocję</a></div>
+                                </div>
+                            </li>
+
+                            <%--                            <li class="nav-item"><a href="contact_us.html" class="nav-link" title="Contact">Contact--%>
                             <%--                                Us</a></li>--%>
                         </ul>
                     </div>
@@ -232,7 +223,8 @@
             </nav>
             <div class="catey__icon"><a href="#" class="cate__btn" data-toggle="modal" data-target="#category_model"
                                         title="Categories"><i class="uil uil-apps"></i></a></div>
-            <div class="header_cart order-1"><a href="/app/cart" class="cart__btn hover-btn pull-bs-canvas-left" title="Cart"><i
+            <div class="header_cart order-1"><a href="/app/cart" class="cart__btn hover-btn pull-bs-canvas-left"
+                                                title="Cart"><i
                     class="uil uil-shopping-cart-alt"></i><span>Koszyk</span>
                 <ins>2</ins>
                 <i class="uil uil-angle-down"></i></a></div>

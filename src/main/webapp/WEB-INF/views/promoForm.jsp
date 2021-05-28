@@ -13,7 +13,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="">Strona główna</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Dodaj produkt</li>
+                            <li class="breadcrumb-item active" aria-current="page">Dodaj produkt do promocji</li>
                         </ol>
                     </nav>
                 </div>
@@ -24,7 +24,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
-                    <div class="default-title"><h2>Dodaj Produkt</h2><img src="/images/line.svg" alt=""></div>
+                    <div class="default-title"><h2>Dodaj produkt do promocji</h2><img src="/images/line.svg" alt=""></div>
                 </div>
                 <div class="col-lg-6">
                     <div class="request-products">
@@ -35,23 +35,18 @@
                             <form:input path="name" type="text" value="" placeholder="Nazwa promocji"/></p>
                             <form:errors path="name"/>
 
-                            <form:select  itemValue="id" itemLabel="name" path="product.id" items="${productModel}">
-                                <form:errors path="product"/>
 
+                            <c:forEach begin="1" end="3">
+
+                            <form:select  itemValue="id" itemLabel="name" path="product_item">
+                                <form:option value="0" label="Wybierz"/>
+                                <form:options items="${productList}" itemValue="id" itemLabel="name"/>
+                                <form:errors path="product_item"/>
                             </form:select>
-
                             <form:input path="quantity" type="number" value="" min="0" placeholder="Ilość" /></p>
                             <form:errors path="quantity"/>
-<%--                            <form:input path="description" type="text" value="" placeholder="Opis Produktu"/>--%>
-<%--                            <form:errors path="description"/>--%>
-<%--                            <form:input path="url" type="text" value="" placeholder="Link"/>--%>
-<%--                            <form:errors path="url"/>--%>
-<%--                            <form:select  itemValue="id" itemLabel="name" path="category.id" items="${categoryModel}">--%>
-<%--                                <form:errors path="category"/>--%>
-
-<%--                            </form:select>--%>
-
-                            <button class="next-btn16 hover-btn mt-3 rqst-btn" type="submit">Dodaj produkt</button>
+                            </c:forEach>
+                            <button class="next-btn16 hover-btn mt-3 rqst-btn" type="submit">Dodaj promocje</button>
 
                         </form:form>
                         </div>

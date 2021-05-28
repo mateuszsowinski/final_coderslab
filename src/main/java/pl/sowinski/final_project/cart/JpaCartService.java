@@ -2,6 +2,7 @@ package pl.sowinski.final_project.cart;
 
 import org.springframework.stereotype.Service;
 import pl.sowinski.final_project.model.Cart;
+import pl.sowinski.final_project.model.User;
 import pl.sowinski.final_project.repository.CartRepository;
 
 import java.util.List;
@@ -11,6 +12,10 @@ import java.util.Optional;
 public class JpaCartService implements CartService {
 
     private CartRepository cartRepository;
+
+    public JpaCartService(CartRepository cartRepository) {
+        this.cartRepository = cartRepository;
+    }
 
     @Override
     public Cart add(Cart addCart) {
@@ -35,6 +40,9 @@ public class JpaCartService implements CartService {
     @Override
     public void delete(Long id) {
         cartRepository.deleteById(id);
+    }
+    public List<Cart> cartListByUser(User user){
+       return cartRepository.findByUser(user);
 
     }
 }

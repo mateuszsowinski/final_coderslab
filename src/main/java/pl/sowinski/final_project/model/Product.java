@@ -27,4 +27,10 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+
+
+    @Override
+    public String toString() {
+        return name + '\'';
+    }
 }

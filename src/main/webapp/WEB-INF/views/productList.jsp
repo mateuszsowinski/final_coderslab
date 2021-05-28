@@ -34,9 +34,9 @@
                                 <th>Id</th>
                                 <th>Nazwa</th>
                                 <th>Cena</th>
-                                <th>Usuń</th>
-                                <th>Edytuj</th>
-                                <th>Szczegóły</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
                             </tr>
                             <c:forEach var="products" items="${products}">
                                 <tr>
