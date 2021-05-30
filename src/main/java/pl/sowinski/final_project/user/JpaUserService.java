@@ -16,7 +16,7 @@ import java.util.Optional;
 public class JpaUserService implements UserService {
 
     private final UserRepository userRepository;
-    private  final RoleRepository roleRepository;
+    private final RoleRepository roleRepository;
 
     public JpaUserService(UserRepository userRepository, RoleRepository roleRepository) {
         this.userRepository = userRepository;

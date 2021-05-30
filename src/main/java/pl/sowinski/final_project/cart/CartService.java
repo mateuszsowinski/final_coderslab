@@ -6,6 +6,7 @@ import pl.sowinski.final_project.model.Category;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 public interface CartService {
 
@@ -15,6 +16,7 @@ public interface CartService {
 
     List<Cart> getCart();
 
-    void update (Cart cartUpdate);
-    void delete (Long id);
+    void update(Cart cartUpdate);
+
+    void delete(Long id);
 }

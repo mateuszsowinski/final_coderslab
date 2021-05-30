@@ -29,27 +29,30 @@ public class CategoryController {
     }
 
     @GetMapping("")
-    public String category(Model model){
+    public String category(Model model) {
         Category category = new Category();
         model.addAttribute("category", category);
         return "categoryForm";
     }
+
     @PostMapping("")
-    public String addCategory(@ModelAttribute("category")@Valid Category category, BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
+    public String addCategory(@ModelAttribute("category") @Valid Category category, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
             return "categoryForm";
         }
         categoryService.add(category);
         return "redirect:/app/category/list";
     }
+
     @GetMapping("/list")
-    public String listCategory(Model model){
+    public String listCategory(Model model) {
         List<Category> categoryList = categoryService.getCategory();
         model.addAttribute("categories", categoryList);
         return "categoryList";
     }
+
     @ModelAttribute("categoryModel")
-    public Collection<Category> categories(){
+    public Collection<Category> categories() {
         return jpaCategoryService.getCategory();
     }
 }

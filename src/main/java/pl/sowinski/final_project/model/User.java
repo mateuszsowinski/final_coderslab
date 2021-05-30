@@ -35,9 +35,8 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
     @NotBlank
-    @Pattern(regexp="(^$|[0-9]{9})", message = "Mogą byc tylko liczby")
+    @Pattern(regexp = "(^$|[0-9]{9})", message = "Mogą byc tylko liczby")
     private String phoneNumber;
-
 
 
     @Override

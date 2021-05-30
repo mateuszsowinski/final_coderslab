@@ -6,6 +6,7 @@ import pl.sowinski.final_project.repository.ProductRepository;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 public class JpaProductService implements ProductService {
 

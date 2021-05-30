@@ -41,8 +41,9 @@ public class JpaCartService implements CartService {
     public void delete(Long id) {
         cartRepository.deleteById(id);
     }
-    public List<Cart> cartListByUser(User user){
-       return cartRepository.findByUser(user);
+
+    public List<Cart> cartListByUser(User user) {
+        return cartRepository.findByUser(user);
 
     }
 }

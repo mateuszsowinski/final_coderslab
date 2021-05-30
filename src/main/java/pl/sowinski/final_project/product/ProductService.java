@@ -6,13 +6,18 @@ import pl.sowinski.final_project.model.Product;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 public interface ProductService {
 
     Product add(Product addProduct);
+
     Optional<Product> getProductById(Long id);
+
     List<Product> getProduct();
+
     void update(Product productUpdate);
+
     void delete(Long id);
 }
 

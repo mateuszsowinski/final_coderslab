@@ -71,23 +71,26 @@ public class PromoController {
         logger.info("Show list promo");
         return "promoList";
     }
+
     @GetMapping("/show/{id:\\d+}")
-    public String showPromo (@PathVariable Long id, Model model){
+    public String showPromo(@PathVariable Long id, Model model) {
         List<Product> productList = jpaProductService.getProduct();
         model.addAttribute("productList", productList);
         model.addAttribute("promo", promoService.getPromoById(id).orElseThrow(EntityNotFoundException::new));
         return "promoShow";
     }
+
     @GetMapping("/user/list")
-    public String userList(Model model){
+    public String userList(Model model) {
         List<Promo> promoList = promoService.getPromo();
         Cart cart = new Cart();
         model.addAttribute("cartAdd", cart);
         model.addAttribute("promoList", promoList);
         return "promoListUser";
     }
+
     @PostMapping("/user/list")
-    public String userListForm(@ModelAttribute("cartAdd") Cart cart){
+    public String userListForm(@ModelAttribute("cartAdd") Cart cart) {
 //        cart.setUser();
         jpaCartService.add(cart);
         return "redirect:/app/promo/user/list";

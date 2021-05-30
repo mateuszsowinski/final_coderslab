@@ -7,6 +7,7 @@ import pl.sowinski.final_project.repository.CategoryRepository;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 public class JpaCategoryService implements CategoryService {
     @Autowired

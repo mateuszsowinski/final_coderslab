@@ -37,7 +37,7 @@ public class UserController {
     }
 
     @GetMapping("")
-    public String startingPage(Model model){
+    public String startingPage(Model model) {
         List<Promo> promoList = jpaPromoService.getPromo();
         List<Category> categoryList = jpaCategoryService.getCategory();
         List<Product> productList = jpaProductService.getProduct();
@@ -46,8 +46,9 @@ public class UserController {
         model.addAttribute("categoryList", categoryList);
         return "index";
     }
+
     @GetMapping("/register")
-    public String register(Model model){
+    public String register(Model model) {
         User user = new User();
         model.addAttribute("user", user);
         return "register";
@@ -55,18 +56,19 @@ public class UserController {
 
 
     @PostMapping("/register")
-    public String addUser(@ModelAttribute("user")@Valid User user, BindingResult bindingResult){
+    public String addUser(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) {
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         String encodePassword = bCryptPasswordEncoder.encode(user.getPassword());
         user.setPassword(encodePassword);
-        if(bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
             return "register";
         }
         userService.addUser(user);
         return "redirect:/login";
     }
+
     @GetMapping("/login")
-    public String loginForm(Model model){
+    public String loginForm(Model model) {
         User user = new User();
         model.addAttribute("user", user);
         return "login";

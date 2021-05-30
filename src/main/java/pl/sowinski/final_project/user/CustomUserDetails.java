@@ -9,7 +9,7 @@ import pl.sowinski.final_project.model.User;
 import java.util.Collection;
 
 public class CustomUserDetails implements UserDetails {
-    
+
     private final User user;
     private final Logger logger = LoggerFactory.getLogger(CustomUserDetails.class);
 

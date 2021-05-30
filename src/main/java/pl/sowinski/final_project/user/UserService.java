@@ -5,6 +5,7 @@ import pl.sowinski.final_project.model.User;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 public interface UserService {
     Optional<User> getUserById(Long userId);

@@ -30,13 +30,11 @@
 
                         </div>
                         <div class="qty-group">
-                            <div class="quantity buttons_added"><input type="button" value="-"
-                                                                       class="minus minus-btn"><input type="number" step="1"
-                                                                                                      name="quantity"
-                                                                                                      value="${cartList.promo.quantity}"
-                                                                                                      class="input-text qty text"><input
-                                    type="button" value="+" class="plus plus-btn"></div>
-                            <div class="cart-item-price">${cartList.promo.price} </div>
+                            <div class="quantity buttons_added">
+                                <input type="button" value="-" class="minus minus-btn">
+                                <input type="number" step="1" name="quantity" value="${cartList.quantity}" class="input-text qty text">
+                                <input type="button" value="+" class="plus plus-btn"></div>
+                            <div class="cart-item-price"> </div>
                         </div>
                         <a class="cart-close-btn" href='<c:url value="/app/cart/delete/${cartList.id}"/>' onclick="return confirm('Czy chcesz usunąć wybraną pozycję?');"><i class="uil uil-multiply"></i></a>
                     </div>
