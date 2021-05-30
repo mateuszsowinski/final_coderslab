@@ -68,7 +68,7 @@
                                             <div class="qty-cart">
                                                 <div class="quantity buttons_added">
                                                     <input type="button" value="-" class="minus minus-btn">
-                                                    <a hidden><form:input path="user.id" value="9"></form:input></a>
+<%--                                                    <a hidden><form:input path="user.id" value="9"></form:input></a>--%>
                                                     <form:input path="quantity" type="number" step="1" name="quantity" value="1" class="input-text qty text"></form:input>
                                                     <input type="button" value="+" class="plus plus-btn"></div>
                                                 <a hidden><form:input path="promo.id" value="${promoList.id}"></form:input></a>

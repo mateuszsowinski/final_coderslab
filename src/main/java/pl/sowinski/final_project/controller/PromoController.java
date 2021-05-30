@@ -2,6 +2,8 @@ package pl.sowinski.final_project.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,9 +12,11 @@ import pl.sowinski.final_project.cart.JpaCartService;
 import pl.sowinski.final_project.model.Cart;
 import pl.sowinski.final_project.model.Product;
 import pl.sowinski.final_project.model.Promo;
+import pl.sowinski.final_project.model.User;
 import pl.sowinski.final_project.product.JpaProductService;
 import pl.sowinski.final_project.product.ProductService;
 import pl.sowinski.final_project.promo.PromoService;
+import pl.sowinski.final_project.user.JpaUserService;
 
 import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
@@ -29,12 +33,15 @@ public class PromoController {
     public final PromoService promoService;
     public final JpaProductService jpaProductService;
     public final JpaCartService jpaCartService;
+    public final JpaUserService jpaUserService;
 
-    public PromoController(ProductService productService, PromoService promoService, JpaProductService jpaProductService, JpaCartService jpaCartService) {
+
+    public PromoController(ProductService productService, PromoService promoService, JpaProductService jpaProductService, JpaCartService jpaCartService, JpaUserService jpaUserService) {
         this.productService = productService;
         this.promoService = promoService;
         this.jpaProductService = jpaProductService;
         this.jpaCartService = jpaCartService;
+        this.jpaUserService = jpaUserService;
     }
 
     @GetMapping("/add")
@@ -90,8 +97,10 @@ public class PromoController {
     }
 
     @PostMapping("/user/list")
-    public String userListForm(@ModelAttribute("cartAdd") Cart cart) {
-//        cart.setUser();
+    public String userListForm(@ModelAttribute("cartAdd") Cart cart, @AuthenticationPrincipal UserDetails userDetails) {
+        String userName = userDetails.getUsername();
+        User user = jpaUserService.findByUserName(userName);
+        cart.setUser(user);
         jpaCartService.add(cart);
         return "redirect:/app/promo/user/list";
     }

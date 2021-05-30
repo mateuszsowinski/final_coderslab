@@ -9,6 +9,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
+<%--<%@ include file="/WEB-INF/views/headerLoginUser.jsp" %>--%>
+
+
+
 <div class="bs-canvas bs-canvas-left position-fixed bg-cart h-100">
     <div class="bs-canvas-header side-cart-header p-3 ">
         <div class="d-inline-block  main-cart-title">Koszyk <span>()</span></div>
@@ -51,3 +55,6 @@
         </a></div>
     </div>
 </div>
+
+
+<%--<%@ include file="/WEB-INF/views/footerLoginUser.jsp" %>--%>
