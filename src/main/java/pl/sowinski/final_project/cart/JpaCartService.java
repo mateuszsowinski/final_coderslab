@@ -23,12 +23,12 @@ public class JpaCartService implements CartService {
     }
 
     @Override
-    public Optional<Cart> getCategoryById(Long id) {
+    public Optional<Cart> getCartById(Long id) {
         return cartRepository.findById(id);
     }
 
     @Override
-    public List<Cart> getCategory() {
+    public List<Cart> getCart() {
         return cartRepository.findAll();
     }
 

@@ -45,10 +45,10 @@
             <div class="category-model-content modal-content">
                 <div class="cate-header"><h4>Wybierz kategorię</h4></div>
                 <ul class="category-by-cat">
-                    <c:forEach items="${categoryModel}" var="categories">
+                    <c:forEach items="${categoryList}" var="categoryList">
                         <li><a href="#" class="single-cat-item">
                             <div class="icon"><img src="/images/category/icon-1.svg" alt=""></div>
-                            <div class="text">${categories.name}</div>
+                            <div class="text">${categoryList.name}</div>
                         </a></li>
                     </c:forEach>
                 </ul>
@@ -142,21 +142,20 @@
                             <div class="night_mode_switch__btn"><a href="#" id="night-mode" class="btn-night-mode"><i
                                     class="uil uil-moon"></i>Tryb ciemny<span class="btn-night-mode-switch"><span
                                     class="uk-switch-button"></span></span></a></div>
-                            <a href="dashboard_overview.html" class="item channel_item"><i
-                                    class="uil uil-apps icon__1"></i>Dashbaord</a><a href="dashboard_my_orders.html"
-                                                                                     class="item channel_item"><i
-                                class="uil uil-box icon__1"></i>Zamówienia</a><a href="dashboard_my_wishlist.html"
-                                                                                 class="item channel_item"><i
-                        <%--                                class="uil uil-heart icon__1"></i>My Wishlist</a><a href="dashboard_my_wallet.html"--%>
-                        <%--                                                                                    class="item channel_item"><i--%>
-                                class="uil uil-usd-circle icon__1"></i>Punkty</a>
-                            <a
-                                href="/logout" class="item channel_item"><i
-                            <%--                                class="uil uil-location-point icon__1"></i>My Address</a><a href="offers.html"--%>
-                            <%--                                                                                            class="item channel_item"><i--%>
-                            <%--                                class="uil uil-gift icon__1"></i>Offers</a><a href="faq.html" class="item channel_item"><i--%>
-                            <%--                                class="uil uil-info-circle icon__1"></i>Faq</a>--%>
+                            <a href="dashboard_overview.html" class="item channel_item"><i class="uil uil-apps icon__1"></i>Dashbaord</a>
+                            <a href="dashboard_my_orders.html" class="item channel_item"><i class="uil uil-box icon__1"></i>Zamówienia</a>
+<%--                            <a href="dashboard_my_wishlist.html" class="item channel_item"><i class="uil uil-heart icon__1"></i>My Wishlist</a>--%>
+                            <a href="dashboard_my_wallet.html" class="item channel_item"><i class="uil uil-usd-circle icon__1"></i>Punkty</a>
+<%--                            <a href="/logout" class="item channel_item"><i class="uil uil-location-point icon__1"></i>My Address</a>--%>
+<%--                            <a href="offers.html" class="item channel_item"><i class="uil uil-gift icon__1"></i>Offers</a>--%>
+<%--                            <a href="faq.html" class="item channel_item"><i class="uil uil-info-circle icon__1"></i>Faq</a>--%>
+
+<%--                                <form action="<c:url value="/"/>" method="post">--%>
+<%--                                    <input class="item channel_item" type="submit" class="uil uil-lock-alt icon__1" value="Wyloguj">--%>
+<%--                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
+<%--                                </form>--%>
                             <a href="${pageContext.request.contextPath}/logout" class="item channel_item"><i class="uil uil-lock-alt icon__1"></i>Wyloguj</a>
+
                                 </security:authorize>
                                 <security:authorize access="!isAuthenticated()">
                                 <a href="/login" type="submit" >Zaloguj</a>

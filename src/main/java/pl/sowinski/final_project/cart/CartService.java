@@ -11,9 +11,9 @@ public interface CartService {
 
     Cart add(Cart addCart);
 
-    Optional<Cart> getCategoryById(Long id);
+    Optional<Cart> getCartById(Long id);
 
-    List<Cart> getCategory();
+    List<Cart> getCart();
 
     void update (Cart cartUpdate);
     void delete (Long id);

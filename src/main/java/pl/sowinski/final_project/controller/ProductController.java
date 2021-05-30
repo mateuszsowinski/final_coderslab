@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.sowinski.final_project.category.JpaCategoryService;
 import pl.sowinski.final_project.model.Category;
 import pl.sowinski.final_project.model.Product;
+import pl.sowinski.final_project.product.JpaProductService;
 import pl.sowinski.final_project.product.ProductService;
 
 import javax.persistence.EntityNotFoundException;
@@ -20,10 +21,12 @@ public class ProductController {
 
     public final ProductService productService;
     public final JpaCategoryService jpaCategoryService;
+    public final JpaProductService jpaProductService;
 
-    public ProductController(ProductService productService, JpaCategoryService jpaCategoryService) {
+    public ProductController(ProductService productService, JpaCategoryService jpaCategoryService, JpaProductService jpaProductService) {
         this.productService = productService;
         this.jpaCategoryService = jpaCategoryService;
+        this.jpaProductService = jpaProductService;
     }
 
     @GetMapping("")
@@ -66,6 +69,8 @@ public class ProductController {
     }
     @GetMapping("/show/{id:\\d+}")
     public String showProduct (@PathVariable Long id, Model model){
+        List<Product> productList = jpaProductService.getProduct();
+        model.addAttribute("productList", productList);
         model.addAttribute("product", productService.getProductById(id).orElseThrow(EntityNotFoundException::new));
         return "product";
     }

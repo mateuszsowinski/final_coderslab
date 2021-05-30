@@ -1,9 +1,6 @@
 package pl.sowinski.final_project.user;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import pl.sowinski.final_project.model.User;
 import pl.sowinski.final_project.repository.UserRepository;
@@ -21,8 +18,8 @@ public class LoginUserService {
         this.userRepository = userRepository;
     }
 
-    public User getUserByEmail(String email) {
-        return userRepository.findByEmail(email);
+    public User getUserByName(String userName) {
+        return userRepository.findByUserName(userName);
     }
 
     public User getLoggedUser(Authentication authentication) {
@@ -32,9 +29,10 @@ public class LoginUserService {
         User user = null;
         Object principal = authentication.getPrincipal();
         if (principal instanceof CustomUserDetails) {
-            String userEmail = ((CustomUserDetails) principal).getUsername();
-            user = getUserByEmail(userEmail);
+            String userName = ((CustomUserDetails) principal).getUsername();
+            user = getUserByName(userName);
         }
         return user;
     }
+
 }

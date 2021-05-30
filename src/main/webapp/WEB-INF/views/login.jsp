@@ -24,10 +24,10 @@
                                 href="index.html"><img class="logo-inverse" src="images/dark-logo.svg" alt=""></a></div>
                         <div class="form-dt">
                             <div class="form-inpts checout-address-step">
-                                <form>
+                                <form:form method="post" >
                                     <div class="form-title"><h6>Zaloguj</h6></div>
-                                    <div class="form-group pos_rel"><input id="email" name="email" type="email"
-                                                                           placeholder="Email użytkownika"
+                                    <div class="form-group pos_rel"><input id="userName" name="userName" type="text"
+                                                                           placeholder="Nazwa użytkownika"
                                                                            class="form-control lgn_input" required=""><i
                                             class="uil uil-mobile-android-alt lgn_icon"></i></div>
                                     <div class="form-group pos_rel"><input id="password" name="password"
@@ -35,7 +35,7 @@
                                                                            class="form-control lgn_input" required=""><i
                                             class="uil uil-padlock lgn_icon"></i></div>
                                     <button class="login-btn hover-btn" type="submit">Zaloguj</button>
-                                </form>
+                                </form:form>
                             </div>
                             <div class="password-forgor"><a href="forgot_password.html">Zapomniałeś hasła?</a></div>
                             <div class="signup-link"><p>Nie masz konta?? - <a href="/register">Zarejestruj się teraz</a>
