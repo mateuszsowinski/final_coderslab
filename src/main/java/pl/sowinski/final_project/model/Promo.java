@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
@@ -24,15 +25,22 @@ public class Promo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
+    @NotBlank(message = "Pole nie może być puste")
     private String name;
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "product_id")
     private Set<Product> product_item = new HashSet<>();
     private int quantity;
-    @Lob
+    @Column(length = 1000)
+    @Size(max = 1000, message = "Maksymalnie 1000 znaków")
+    @NotBlank(message = "Pole nie może być puste")
     private String description;
+    @NotBlank(message = "Pole nie może być puste")
+    @Size(max = 255, message = "Maksymalnie 255 znaków")
+    private String shortDescription;
+    @Column(precision = 10, scale = 2)
     private BigDecimal price;
+    private int points;
 
     @Override
     public String toString() {
@@ -42,7 +50,9 @@ public class Promo {
                 ", product_item=" + product_item +
                 ", quantity=" + quantity +
                 ", description='" + description + '\'' +
+                ", shortDescription='" + shortDescription + '\'' +
                 ", price=" + price +
+                ", points=" + points +
                 '}';
     }
 }

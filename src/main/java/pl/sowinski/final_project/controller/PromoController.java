@@ -82,9 +82,19 @@ public class PromoController {
     @GetMapping("/show/{id:\\d+}")
     public String showPromo(@PathVariable Long id, Model model) {
         List<Product> productList = jpaProductService.getProduct();
+        Cart cart = new Cart();
+        model.addAttribute("cartAdd", cart);
         model.addAttribute("productList", productList);
         model.addAttribute("promo", promoService.getPromoById(id).orElseThrow(EntityNotFoundException::new));
-        return "promoShow";
+        return "promo";
+    }
+    @PostMapping("/show/{id:\\d+}")
+    public String showPromoForm(@ModelAttribute("cartAdd") Cart cart, @AuthenticationPrincipal UserDetails userDetails) {
+        String userName = userDetails.getUsername();
+        User user = jpaUserService.findByUserName(userName);
+        cart.setUser(user);
+        jpaCartService.add(cart);
+        return "redirect:/app/promo/user/list";
     }
 
     @GetMapping("/user/list")
@@ -104,4 +114,19 @@ public class PromoController {
         jpaCartService.add(cart);
         return "redirect:/app/promo/user/list";
     }
+    @GetMapping("/update/{id:\\d+}")
+    public String updatePromoForm(@PathVariable Long id, Model model) {
+        model.addAttribute("promo", promoService.getPromoById(id));
+        return "promoForm";
+    }
+
+    @PostMapping("/update/{id:\\d+}")
+    public String updatePromoPost(@ModelAttribute("promo") @Valid Promo promo, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "promoForm";
+        }
+        promoService.update(promo);
+        return "redirect:/app/promo/list";
+    }
+
 }

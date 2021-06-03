@@ -55,7 +55,7 @@
                 <div class="row">
                     <c:forEach var="promoList" items="${promoList}">
                         <form:form method="post" modelAttribute="cartAdd">
-                            <security:authorize access="isAuthenticated()">
+<%--                            <security:authorize access="isAuthenticated()">--%>
                                 <div class="col-lg-3 col-md-6">
                                     <div class="product-item mb-30"><a href="/app/promo/show/${promoList.id}"
                                                                        class="product-img"><img
@@ -77,7 +77,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </security:authorize>
                         </form:form>
                     </c:forEach>
                     <div class="col-md-12">

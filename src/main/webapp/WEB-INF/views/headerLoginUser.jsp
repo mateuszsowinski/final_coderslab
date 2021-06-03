@@ -103,7 +103,7 @@
     </div>
 </div><!-- Search Model End--><!-- Cart Sidebar Offset Start-->
 
-<%@ include file="/WEB-INF/views/cartList.jsp" %>
+<%--<%@ include file="/WEB-INF/views/cartList.jsp" %>--%>
 
 <!-- Cart Sidebar Offsetl End--><!-- Header Start -->
 <header class="header clearfix">
@@ -191,7 +191,7 @@
                                     <div class="menu dropdown_page"><a
                                             href="${pageContext.request.contextPath}/app/product/list"
                                             class="item channel_item page__links">Lista produktów</a><a
-                                            href="${pageContext.request.contextPath}/app/product"
+                                            href="${pageContext.request.contextPath}/app/product/add"
                                             class="item channel_item page__links">Dodaj produkt</a></div>
                                 </div>
                             </li>
@@ -226,10 +226,9 @@
             </nav>
             <div class="catey__icon"><a href="#" class="cate__btn" data-toggle="modal" data-target="#category_model"
                                         title="Categories"><i class="uil uil-apps"></i></a></div>
-            <div class="header_cart order-1"><a href="/app/cart" class="cart__btn hover-btn pull-bs-canvas-left"
-                                                title="Cart"><i
-                    class="uil uil-shopping-cart-alt"></i><span>Koszyk</span>
-                <ins>2</ins>
+            <div class="header_cart order-1">
+                <a href="${pageContext.request.contextPath}/app/cart" title="Koszyk"><i
+                    class="uil uil-shopping-cart-alt"></i><span>Koszyk</span><ins></ins>
                 <i class="uil uil-angle-down"></i></a></div>
             <div class="search__icon order-1"><a href="#" class="search__btn hover-btn" data-toggle="modal"
                                                  data-target="#search_model" title="Search"><i
@@ -237,3 +236,6 @@
         </div>
     </div>
 </header><!-- Header End -->
+
+
+class="cart__btn hover-btn pull-bs-canvas-left"

@@ -23,19 +23,19 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
+    @NotBlank(message = "Pole nie może być puste")
     private String userName;
-    @NotBlank
+    @NotBlank(message = "Pole nie może być puste")
     @Email
     private String email;
-    @NotBlank
+    @NotBlank(message = "Pole nie może być puste")
     private String password;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
-    @NotBlank
-    @Pattern(regexp = "(^$|[0-9]{9})", message = "Mogą byc tylko liczby")
+    @NotBlank(message = "Pole nie może być puste")
+    @Pattern(regexp = "(^$|[0-9]{9})", message = "Musi być 9 liczb")
     private String phoneNumber;
 
 

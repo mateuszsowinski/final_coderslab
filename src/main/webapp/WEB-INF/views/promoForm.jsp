@@ -32,19 +32,23 @@
                         <form:form method="post" modelAttribute="promo">
                             <div class="form-group">
                               <p hidden>  <form:input path="id" type="text" value="" /></div></p>
-                            <form:input path="name" type="text" value="" placeholder="Nazwa promocji"/></p>
-                            <form:errors path="name"/>
+                            <form:input path="name" type="text" value="" placeholder="Nazwa promocji"/>
+                            <form:errors path="name"/><p>
+                                <form:input path="shortDescription" type="text" value="" placeholder="Krótki opis produktu"/>
+                            <form:errors path="shortDescription"/><p>
+                                <form:input path="description" type="text" value="" placeholder="Opis Produktu"/>
+                            <form:errors path="description"/><p>
 
-
-                            <c:forEach begin="1" end="3">
+                            <c:forEach begin="1" end="5">
 
                             <form:select  itemValue="id" itemLabel="name" path="product_item">
-                                <form:option value="0" label="Wybierz"/>
+                                <form:option value="" label="Wybierz"/>
                                 <form:options items="${productList}" itemValue="id" itemLabel="name"/>
                                 <form:errors path="product_item"/>
                             </form:select>
-                            <form:input path="quantity" type="number" value="" min="0" placeholder="Ilość" /></p>
-                            <form:errors path="quantity"/>
+                            <form:input path="quantity" type="number" value="" min="0" placeholder="Ilość" />
+                            <form:errors path="quantity"/><p>
+                            <form:input path="price"
                             </c:forEach>
                             <button class="next-btn16 hover-btn mt-3 rqst-btn" type="submit">Dodaj promocje</button>
 

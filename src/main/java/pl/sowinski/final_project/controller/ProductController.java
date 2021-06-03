@@ -29,20 +29,20 @@ public class ProductController {
         this.jpaProductService = jpaProductService;
     }
 
-    @GetMapping("")
+    @GetMapping("/add")
     public String product(Model model) {
         Product product = new Product();
         model.addAttribute("product", product);
         return "productForm";
     }
 
-    @PostMapping("")
+    @PostMapping("/add")
     public String addProduct(@ModelAttribute("product") @Valid Product product, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "publicForm";
+            return "productForm";
         }
         productService.add(product);
-        return "redirect:/app/category/list";
+        return "redirect:/app/product/list";
     }
 
     @GetMapping("/list")

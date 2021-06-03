@@ -30,21 +30,25 @@
                     <div class="request-products">
                         <form:form method="post" modelAttribute="product">
                             <div class="form-group">
-                              <p hidden>  <form:input path="id" type="text" value="" /></div></p>
-                            <form:input path="name" type="text" value="" placeholder="Nazwa produktu"/></p>
-                            <form:errors path="name"/>
-                            <form:input path="price" type="text" value="" placeholder="Cena produktu" /></p>
-                            <form:errors path="price"/>
-                            <form:input path="description" type="text" value="" placeholder="Opis Produktu"/></p>
-                            <form:errors path="description"/>
-                            <form:input path="url" type="text" value="" placeholder="Link"/></p>
-                            <form:errors path="url"/>
-                            <form:select  itemValue="id" itemLabel="name" path="category.id" items="${categoryModel}">
+                              <p hidden>  <form:input path="id" type="text" value="" /></div><p>
+                            <form:input path="name" type="text" value="" placeholder="Nazwa produktu"/>
+                            <form:errors path="name"/><p>
+                            <form:input path="price" type="text" value="" placeholder="Cena produktu" />
+                            <form:errors path="price"/><p>
+                            <form:input path="description" type="text" value="" placeholder="Opis Produktu"/>
+                            <form:errors path="description"/><p>
+                            <form:input path="url" type="text" value="" placeholder="Link"/>
+                            <form:errors path="url"/><p>
+                            <form:select  itemValue="id" itemLabel="name" path="category">
+                                <form:option value="" label="Wybierz"/>
+                                <form:options items="${categoryModel}" itemValue="id" itemLabel="name"/>
                                 <form:errors path="category"/>
 
                             </form:select>
 
                             <button class="next-btn16 hover-btn mt-3 rqst-btn" type="submit">Dodaj produkt</button>
+
+
 
                         </form:form>
                         </div>
