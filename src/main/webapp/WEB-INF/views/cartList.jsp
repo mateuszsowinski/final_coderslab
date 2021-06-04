@@ -72,8 +72,7 @@
                     <div class="cart-item">
                     <c:forEach var="cartList" items="${cartList}">
                     <div class="item">
-                        <div class="product-item"><a href="/app/promo/show/${cartList.id}" class="product-img"><img
-                                src="/images/product/img-3.jpg" alt="">
+                        <div class="product-item"><a href="/app/promo/show/${cartList.promo.id}" class="product-img"><img src="/images/product/img-3.jpg" alt="">
                                                                 <div class="product-absolute-options">
 <%--                                                                    <span class="offer-badge-1"></span>--%>
 <%--                                                                    <a href="" class="cart-close-btn" title="Usuń"></a></div>--%>
@@ -81,7 +80,7 @@
                         </a>
                             <div class="product-text-dt"><p><span></span></p><h4>${cartList.promo.name}</h4>
 
-<%--                                <div class="product-price">${cartList.}<span></span></div>--%>
+                                <div class="product-price">${cartList.promo.price}<span></span></div>
                                 <div class="qty-cart">
                                     <div class="quantity buttons_added"><input type="button" value="-" class="minus minus-btn">
                                         <input type="number" step="1" name="quantity" value="${cartList.quantity}" class="input-text qty text">

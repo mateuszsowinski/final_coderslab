@@ -77,6 +77,8 @@
                                         </div>
                                     </div>
                                 </div>
+                                </div>
+
                         </form:form>
                     </c:forEach>
                     <div class="col-md-12">

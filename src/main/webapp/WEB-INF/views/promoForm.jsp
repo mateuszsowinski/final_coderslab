@@ -48,8 +48,10 @@
                             </form:select>
                             <form:input path="quantity" type="number" value="" min="0" placeholder="Ilość" />
                             <form:errors path="quantity"/><p>
-                            <form:input path="price"
                             </c:forEach>
+
+                            <form:input path="price" type="number" min="0" placeholder="Cena"/><p>
+                            <form:input path="points" type="number" min="0" placeholder="Punkty"/><p>
                             <button class="next-btn16 hover-btn mt-3 rqst-btn" type="submit">Dodaj promocje</button>
 
                         </form:form>

@@ -1,4 +1,4 @@
-package pl.sowinski.final_project.controller;
+package pl.sowinski.final_project.promo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,17 +9,15 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.sowinski.final_project.cart.JpaCartService;
-import pl.sowinski.final_project.model.Cart;
-import pl.sowinski.final_project.model.Product;
-import pl.sowinski.final_project.model.Promo;
-import pl.sowinski.final_project.model.User;
+import pl.sowinski.final_project.model.*;
+import pl.sowinski.final_project.points.JpaPointsService;
 import pl.sowinski.final_project.product.JpaProductService;
 import pl.sowinski.final_project.product.ProductService;
-import pl.sowinski.final_project.promo.PromoService;
 import pl.sowinski.final_project.user.JpaUserService;
 
 import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
+import java.awt.*;
 import java.util.List;
 
 @Controller
@@ -34,14 +32,16 @@ public class PromoController {
     public final JpaProductService jpaProductService;
     public final JpaCartService jpaCartService;
     public final JpaUserService jpaUserService;
+    public final JpaPointsService jpaPointsService;
 
 
-    public PromoController(ProductService productService, PromoService promoService, JpaProductService jpaProductService, JpaCartService jpaCartService, JpaUserService jpaUserService) {
+    public PromoController(ProductService productService, PromoService promoService, JpaProductService jpaProductService, JpaCartService jpaCartService, JpaUserService jpaUserService, JpaPointsService jpaPointsService) {
         this.productService = productService;
         this.promoService = promoService;
         this.jpaProductService = jpaProductService;
         this.jpaCartService = jpaCartService;
         this.jpaUserService = jpaUserService;
+        this.jpaPointsService = jpaPointsService;
     }
 
     @GetMapping("/add")
@@ -83,17 +83,21 @@ public class PromoController {
     public String showPromo(@PathVariable Long id, Model model) {
         List<Product> productList = jpaProductService.getProduct();
         Cart cart = new Cart();
+        Points points = new Points();
+        model.addAttribute("points",points);
         model.addAttribute("cartAdd", cart);
         model.addAttribute("productList", productList);
         model.addAttribute("promo", promoService.getPromoById(id).orElseThrow(EntityNotFoundException::new));
         return "promo";
     }
     @PostMapping("/show/{id:\\d+}")
-    public String showPromoForm(@ModelAttribute("cartAdd") Cart cart, @AuthenticationPrincipal UserDetails userDetails) {
+    public String showPromoForm(@ModelAttribute("cartAdd") Cart cart, @ModelAttribute("points") Points points, @AuthenticationPrincipal UserDetails userDetails) {
         String userName = userDetails.getUsername();
         User user = jpaUserService.findByUserName(userName);
         cart.setUser(user);
+        points.setUser(user);
         jpaCartService.add(cart);
+        jpaPointsService.add(points);
         return "redirect:/app/promo/user/list";
     }
 

@@ -11,6 +11,9 @@
 
 
 <%@include file="/WEB-INF/views/headerLoginUser.jsp"%>
+<form:form method="post" modelAttribute="points">
+    <form:hidden path="points" value="${promo.points}"/>
+    <form:hidden path="promoPoints" value="${promo.id}"/>
 
 <form:form method="post" modelAttribute="cartAdd">
 
@@ -65,13 +68,16 @@
                                             <li>
                                                 <div class="qty-product">
                                                     <div class="quantity buttons_added"><input type="button" value="-" class="minus minus-btn">
+
                                                         <a hidden><form:input path="promo" value="${promo.id}"/></a>
                                                         <form:input type="number" step="1" name="quantity" value="1" class="input-text qty text" path="quantity"/>
                                                         <input type="button" value="+" class="plus plus-btn">
                                                     </div>
                                                 </div>
                                             </li>
-<%--                                            <li><span class="like-icon save-icon" title="wishlist"></span></li>--%>
+                                            <button disabled class="order-btn hover-btn">Za ten zakup otrzymasz ${promo.points} punktów</button>
+
+                                        <%--                                            <li><span class="like-icon save-icon" title="wishlist"></span></li>--%>
                                         </ul>
                                         <ul class="ordr-crt-share">
                                             <li>
@@ -79,7 +85,7 @@
                                                         class="uil uil-shopping-cart-alt"></i>Dodaj do koszyka</button>
                                             </li>
                                             <li>
-<%--                                                <button class="order-btn hover-btn">Order Now</button>--%>
+<%--                                                <button class="order-btn hover-btn">Za ten zakup otrzymasz ${promo.points}</button>--%>
                                             </li>
                                         </ul>
                                     </div>
@@ -148,4 +154,5 @@
 
 </form:form>
 
+</form:form>
 <%@include file="/WEB-INF/views/footerLoginUser.jsp"%>

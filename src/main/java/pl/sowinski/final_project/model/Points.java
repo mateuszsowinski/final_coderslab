@@ -3,6 +3,8 @@ package pl.sowinski.final_project.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "points")
@@ -20,9 +22,9 @@ public class Points {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-    @ManyToOne
+    @ManyToMany
     @JoinColumn(name = "promo_id")
-    private Promo promo;
+    private Set<Promo> promoPoints = new HashSet<>();
     private int points;
 
 }

@@ -1,4 +1,4 @@
-package pl.sowinski.final_project.controller;
+package pl.sowinski.final_project.cart;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,21 +1,21 @@
-package pl.sowinski.final_project.controller;
+package pl.sowinski.final_project.user;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.sowinski.final_project.category.JpaCategoryService;
-import pl.sowinski.final_project.model.Category;
-import pl.sowinski.final_project.model.Product;
-import pl.sowinski.final_project.model.Promo;
-import pl.sowinski.final_project.model.User;
+import pl.sowinski.final_project.model.*;
 import pl.sowinski.final_project.product.JpaProductService;
 import pl.sowinski.final_project.promo.JpaPromoService;
 import pl.sowinski.final_project.user.UserService;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -50,10 +50,10 @@ public class UserController {
     @GetMapping("/register")
     public String register(Model model) {
         User user = new User();
+
         model.addAttribute("user", user);
         return "register";
     }
-
 
     @PostMapping("/register")
     public String addUser(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) {
@@ -72,5 +72,14 @@ public class UserController {
         User user = new User();
         model.addAttribute("user", user);
         return "login";
+    }
+
+    @GetMapping("/logout")
+    public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null) {
+            new SecurityContextLogoutHandler().logout(request, response, auth);
+        }
+        return "redirect:/login?logout";
     }
 }

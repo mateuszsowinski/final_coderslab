@@ -20,8 +20,8 @@
             <div class="col-lg-5">
                 <div class="sign-form">
                     <div class="sign-inner">
-                        <div class="sign-logo" id="logo"><a href="index.html"><img src="images/logo.svg" alt=""></a><a
-                                href="index.html"><img class="logo-inverse" src="images/dark-logo.svg" alt=""></a></div>
+                        <div class="sign-logo" id="logo"><a href="/"><img src="/images/logo.svg" alt=""></a><a
+                                href="index.html"><img class="logo-inverse" src="/images/dark-logo.svg" alt=""></a></div>
                         <div class="form-dt">
                             <div class="form-inpts checout-address-step">
                                 <form:form method="post" >

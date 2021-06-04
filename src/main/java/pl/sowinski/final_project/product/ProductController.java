@@ -1,4 +1,4 @@
-package pl.sowinski.final_project.controller;
+package pl.sowinski.final_project.product;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

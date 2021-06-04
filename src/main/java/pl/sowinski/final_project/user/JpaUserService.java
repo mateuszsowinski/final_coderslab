@@ -7,10 +7,7 @@ import pl.sowinski.final_project.model.User;
 import pl.sowinski.final_project.repository.RoleRepository;
 import pl.sowinski.final_project.repository.UserRepository;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class JpaUserService implements UserService {
@@ -30,10 +27,11 @@ public class JpaUserService implements UserService {
 
     @Override
     public User addUser(User addUser) {
-        Role userRole = roleRepository.findByName("ROLE_USER");
-        addUser.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
+        Role userRole = roleRepository.findByName("USER");
+        addUser.setRoles(new HashSet<Role>(Collections.singletonList(userRole)));
         return userRepository.save(addUser);
     }
+
 
     @Override
     public void update(User updatedUser) {
